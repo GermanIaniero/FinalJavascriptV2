@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Products</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<header>
+  <h1 id="titulo" class="titulo">Shop Isa y Jose</h1>
+  <a href="https://api.whatsapp.com/send?phone=5493512404281" class="btn-wsp" target="_blank">
+    <i class="fa fa-whatsapp icono"></i>
+  </a>
+</header>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+
+    <a href="/index.html" class="active">Home</a>
+    <a href="/pages/productos2.html">Productos</a>
+    <a href="/pages/carrito.html">Carrito</a>
+    <a href="/pages/contacto.html">Contacto</a>
+    <div class="animation start-home"></div>
+    <a href="javascript:void(0);" class="icon" id="nav">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <button class="dark" style="vertical-align:center"><span>Modo Oscuro </span></button>
+
+
+    
+    <section class="objetivos">
+      <div class="encabezado" style="padding-right: 90px; padding-left: 40px">
+        <p>
+        <h2>CONTACTO</h2>
+        <section class="container">
+        
+          <form action="" method="POST" id="form" >
+          <div class="row">
+            <div class="col-25">
+              <label for="fname">Nombres</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="fname" name="firstname" placeholder="Tu nombre es...">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Apellido</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="lname" name="lastname" placeholder="Tu apellido es..">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="country">¿Qué canal de comunicación preferis?</label>
+            </div>
+            <div class="col-75">
+              <select id="country" name="country">
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="Telegram">Telegram</option>
+                <option value="Mail">Mail</option>
+              </select>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-25">
+              <label type="email">Email</label>
+            </div>
+            <div class="col-75">
+              <input type="email" id="email" name="" placeholder="Tu email es...">
+            </div>
+          </div>
+          
+
+
+          <div class="row">
+            <div class="col-25">
+              <label for="subject">Mensaje</label>
+            </div>
+            <div class="col-75">
+              <textarea id="subject" name="subject" placeholder="Mensaje.." style="height:200px"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-95">
+               <button type="reset">Limpiar</button>
+               <button type="submit">Enviar</button>
+               <h4 class="warnings" id="warnings"></h4>
+            </div>   
+            
+
+          
+          </div>
+          </form>
+        </section>
+    </section>
+    </div>
+
+  
+ 
+
+    <footer class="container2 footer myFooter bg-footer text-center">
+      <div class="row mt-3 mb-2">
+  
+        <div class="redes col-md-12 ">
+          <h4>Seguinos en nuestras redes</h4>
+          
+          <div class="imgfooter">
+  
+            <a href="https://www.facebook.com/IsayJoseIND">
+              <img src="/img/facebook.webp" alt="Facebook" width="5%" height="auto"></a>
+  
+              <a href="https://www.instagram.com/isayjoseind/">
+                <img src="/img/instagram.webp" alt="Instagram" width="5%" height="auto"></a>
+  
+              <a href="https://www.youtube.com/channel/UC07eWMNPq87-roVL60gIRyw">
+                <img src="/img/youtube.webp" alt="Youtube" width="5%" height="auto"></a>
+          </div>
+          <h4>© Copyright: IsayJoseIND | Todos los derechos reservados</h4>    
+        </div>
+  
+      </div>
+  
+      
+    </footer>
+
+  
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"></script>
+      
+      <script src="/script/contacto.js"></script>
+      <script defer src="/script/index.js"></script>
+    
+</body>
+
+
+</html>
