@@ -1,10 +1,3 @@
-/*fetch("https://63c27ec1b0c286fbe5ee8771.mockapi.io/FinalJavaScript/ShopIsa")
-fetch("https://rickandmortyapi.com/api/character/")
-.then( res => res.json())
-.then( data => console.log(data))
-.catch(() => console.log("error"))*/
-
-/* metodo get */
 var ProdsCarrito = [];
 
 const productosHtml = () => {
@@ -30,19 +23,6 @@ async function getProductos() {
     console.log(data)
     return  data;
 }
-
-/* verify
-fetch("https://63c27ec1b0c286fbe5ee8771.mockapi.io/FinalJavaScript/ShopIsa")
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(() => console.log("error"))
-*/
-
-
-
-
-
-/* metodo post */
 
 let formProductos = document.querySelector("#form-productos")
 const inputProducto = document.querySelector("#input-producto")
@@ -79,9 +59,6 @@ formProductos.addEventListener('onsubmit', (event) => {
 
 
 
-
-/* Put y patch */
-
 async function updateProducto(id) {
     fetch(`https://63c27ec1b0c286fbe5ee8771.mockapi.io/FinalJavaScript/ShopIsa/${id}`, {
         method: "PUT",
@@ -109,16 +86,8 @@ async function updateProducto(id) {
 }
 
 
-/* BUSCAR A TRAVÉS DE UNA API */
-
 const inputProductos = document.querySelector("#input-busqueda")
-// verify const formProductos = document.querySelector("#form-busqueda")
-/* verificar
-formProductos.onsubmit.value = (e) => {
-    e.preventDefault()
-    peticion(inputProductos.value)
-}
-*/
+
 function peticion(busqueda) {
     fetch(`https://63c27ec1b0c286fbe5ee8771.mockapi.io/FinalJavaScript/ShopIsa/${busqueda}/`)
     .then(res => res.json())
@@ -131,40 +100,7 @@ function peticion(busqueda) {
 
 
 
-// ASYNC AWAIT PARA PODER HACER PETICIONES
 
-/* verify const peticionApi = async () => {
-    const respuesta = await fetch("https://63c27ec1b0c286fbe5ee8771.mockapi.io/FinalJavaScript/ShopIsa/?q=descrip:mate&pageSize=20&page=1")
-    const data = await respuesta.json()
-    console.log(data)
-}
-peticionApi()
-// PODEMOS HACER PETICIONES DESDE UN JSON
-/*
-function loadProductos(){
-/*fetch("productos.json")
-.then( res => res.json())
-.then( data => {
-        data.forEach(element => {
-            console.log(element.email)
-    });
-})   */
-
-
-/*fetch("mockapi.json") */
-
-/*
-function loadProductos(){
-fetch('./json/productos.json')
-.then( res => res.json())
-.then( data => cargarProductos(data))
-}
-*/
-
-
-// EL FETCH TIENE UNA VERSIÓN DE SUGAR SYNTAX
-// ASYNC AWAIT
-// es una versión simplificada de fetch
 
 const cards = (array) => {
     const nodos = array.reduce((acc, element) => {
@@ -201,7 +137,6 @@ const personajes = async () => {
     })
 }
 
-// verufy personajes()
 
 let paginaSiguiente = 40
 
@@ -234,42 +169,40 @@ function Consultar() {
 
 async function CargarCarrito(id) {
 
-
-    // Aca desde cualquier pagina obtenes el listado de productos del carrito
     let cart = JSON.parse(localStorage.getItem("cart") || "[]");
     console.log(cart);
 ;
-    // recorro la lista de todos los productos en general
+
     let  listaProductos =  await getProductos();
 
-    // si el id del click del boton coincide con un producto lo agrego a la lista de productos del carrito
+    
     listaProductos.forEach(producto => {
         if (producto.id == id) {
             cart.push(producto);
         }
         });
 
-    // cargo la lista actualizadas de productos al carrito.
+    
     localStorage.setItem("cart", JSON.stringify(cart));
 
 }
 
 async function EliminarProductoCarrito(id) {
 
-    // Aca desde cualquier pagina obtenes el listado de productos del carrito
+    
     let cart = JSON.parse(localStorage.getItem("cart") || "[]");
     console.log(cart);
     ;
     let aux = [];
 
-    // si el id del click del boton no coincide lo agrego a la lista dejandome una lista sin el id que elimine
+    
     cart.forEach(producto => {
         if (producto.id != id) {
             aux.push(producto);
         }
     });
 
-    // cargo la lista actualizadas de productos al carrito.
+    
     localStorage.setItem("cart", JSON.stringify(aux));
 
 }
