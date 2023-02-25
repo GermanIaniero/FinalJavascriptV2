@@ -1,3 +1,4 @@
+
 let infoDelLs = JSON.parse(localStorage.getItem("carrito"))
 
 const cardHtml = ( array ) => {
@@ -31,6 +32,7 @@ const cardHtml = ( array ) => {
 
 cardHtml(infoDelLs || [])
 
+
 function borrarDelCarrito (array) {
     const botonAniadir = document.querySelectorAll(".boton-card")    
     botonAniadir.forEach( boton => {
@@ -57,14 +59,8 @@ botonBorrarCarrito.onclick = () => {
     document.querySelector(".carrito-contenedor").innerHTML = "no hay productos"
 }
 
-
-let p = document.getElementById("pagar"); 
-p.onclick = HacerClick; 
-
-/*function muestraAlerta(evento) {
-  alert("Esta a punto de pagar");
-}*/
-
+let pagar2 = document.getElementById("pagar"); 
+pagar2.onclick = HacerClick; 
 
 function HacerClick(evento) {
     swal({
@@ -76,6 +72,9 @@ function HacerClick(evento) {
     })
     .then((willDelete) => {
         if (willDelete) {
+          localStorage.removeItem("carrito"),
+          location.reload(),
+          window.location = "tarjeta.html"
           swal("Lo redireccionamos al sitio de pagos!", {
             icon: "success",
             
@@ -86,4 +85,3 @@ function HacerClick(evento) {
     });    
   }
 
-  
