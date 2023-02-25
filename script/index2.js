@@ -4,10 +4,7 @@ const cardHtml = (array) => {
   const generarNodos = array.reduce((acc, element) => {
     return (
       acc +
-      `
-         
-      
-          <div class="row">
+      `<div class="row">
             <div class="col-sm-6">
           
            <div class="card"  id="stockProductos2-${element.id}">
@@ -29,7 +26,7 @@ const cardHtml = (array) => {
                </button>
            </div>
          </div>  
-       </div>  
+       </div>
         `
     );
   }, "");
