@@ -20,7 +20,6 @@ async function getProductos() {
         throw new Error(`HTTP error! status: ${repuesta.status}`);
     }
     let data = await repuesta.json()
-    console.log(data)
     return  data;
 }
 
@@ -54,7 +53,7 @@ formProductos.addEventListener('onsubmit', (event) => {
         }
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+    
 });
 
 
@@ -79,9 +78,9 @@ async function updateProducto(id) {
 
 
     .then((res) => res.json())
-    .then((data) => console.log(data))
+    
     .catch(() => {
-        console.log("No se encontro registro para modificar, vuelva a intentarlo")
+        alert("No se encontro registro para modificar, vuelva a intentarlo")
     })
 }
 
@@ -94,7 +93,7 @@ function peticion(busqueda) {
     .then(data => {
         alert(`El nombre del producto buscado es: ${data.descrip}`)
     })
-    .catch(() => console.log("no se encontro"))
+    .catch(() => alert("no se encontro"))
 }
 
 
@@ -132,7 +131,7 @@ const personajes = async () => {
             const filtrarPersonaje = data.results.filter(elemento => {
                 return elemento.id === Number(id)
             })
-            console.log(filtrarPersonaje)
+            
         }
     })
 }
@@ -146,7 +145,7 @@ function nextPage() {
             paginaSiguiente++
             document.querySelector("#next")
         }
-        console.log(paginaSiguiente)
+        
         fetch(`https://63c27ec1b0c286fbe5ee8771.mockapi.io/FinalJavaScript/ShopIsa?page=${paginaSiguiente}`)
             .then(res => res.json())
             .then(data => {
@@ -170,7 +169,6 @@ function Consultar() {
 async function CargarCarrito(id) {
 
     let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    console.log(cart);
 ;
 
     let  listaProductos =  await getProductos();
@@ -191,7 +189,6 @@ async function EliminarProductoCarrito(id) {
 
     
     let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    console.log(cart);
     ;
     let aux = [];
 

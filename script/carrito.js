@@ -40,8 +40,7 @@ function borrarDelCarrito (array) {
                 return elemento.id != Number(id)
             })
             infoDelLs = filtrarProducto
-            localStorage.setItem("carrito", JSON.stringify(infoDelLs))
-            console.log(infoDelLs)    
+            localStorage.setItem("carrito", JSON.stringify(infoDelLs))   
             cardHtml(infoDelLs)
             borrarDelCarrito(infoDelLs)       
         }
@@ -58,11 +57,33 @@ botonBorrarCarrito.onclick = () => {
     document.querySelector(".carrito-contenedor").innerHTML = "no hay productos"
 }
 
-function HacerClick() {
+
+let p = document.getElementById("pagar"); 
+p.onclick = HacerClick; 
+
+/*function muestraAlerta(evento) {
+  alert("Esta a punto de pagar");
+}*/
+
+
+function HacerClick(evento) {
     swal({
       title: "¿Desea continuar con el pago?",
       text: "Verifique antes de pagar",
       icon: "info",
-      button: "Entendido"
-    });
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+        if (willDelete) {
+          swal("Lo redireccionamos al sitio de pagos!", {
+            icon: "success",
+            
+          });
+        } else {
+          swal("Continue comprando!");
+        }
+    });    
   }
+
+  

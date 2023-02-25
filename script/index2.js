@@ -38,9 +38,6 @@ cardHtml(stockProductos2);
 
 let carrito = [];
 
-// necesito llamar a todos los botones que van a generar la acción de añadir al carrito
-// para poder hacerlo, utilizamos querySelectorAll , getElementByClassName
-
 function aniadirAlCarrito(array) {
   const botonAniadir = document.querySelectorAll(".boton-card");
   botonAniadir.forEach((boton) => {
@@ -50,7 +47,7 @@ function aniadirAlCarrito(array) {
         return elemento.id === Number(id);
       });
       carrito.push(filtrarProducto);
-      console.log(carrito);
+    
       localStorage.setItem("carrito", JSON.stringify(carrito));
     };
   });

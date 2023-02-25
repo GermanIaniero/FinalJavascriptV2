@@ -46,12 +46,3 @@ nav2.onclick = myFunction;
     }
     localStorage.setItem("theme", theme);
   });
-
-
-
-  let p = document.getElementById("pagar"); 
-  p.onclick = muestraAlerta; 
-  
-  function muestraAlerta(evento) {
-    alert("Esta a punto de pagar");
-  }
